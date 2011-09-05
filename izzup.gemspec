@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Izzup::VERSION
   s.authors     = ["max sharples"]
   s.email       = ["maxsharples@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "http://github.com/msharp/izzup"
   s.summary     = %q{checks for needed processes}
-  s.description = %q{use to ensure other *nix processes are up when executing code}
+  s.description = %q{use to ensure that required *nix processes are up when executing code}
 
   s.rubyforge_project = "izzup"
 
@@ -17,8 +17,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-
+  
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
+  
 end
