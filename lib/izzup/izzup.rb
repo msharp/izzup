@@ -3,15 +3,17 @@ module Izzup
 
     # require these or fail with izzup error
     def self.demand(*args)
-        args.each do |p|
-            raise IzzupError, "#{self.name} dying because #{p} is not up" unless izzup(p) 
+        IzzupArguments.new(args).each do |p,n|
+            raise IzzupError, "#{self.name} dying because #{n} instance(s) of #{p} not discovered" unless izzup(p,n) 
         end
     end
 
     # see if they are up true/false
     def self.assert(*args)
         found = true
-        args.each {|p| found = found && izzup(p)}
+        IzzupArguments.new(args).each do |p,n|
+            found = found && izzup(p,n)
+        end
         found
     end
 
